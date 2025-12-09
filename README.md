@@ -1,77 +1,39 @@
 # Vox-on-your-sreem-Fr<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Démon TV Glitch</title>
+
+<style>
+/* --- GLOBAL --- */
 body {
-  background: #080808;
+  background: #060606;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: sans-serif;
 }
 
+/* --- CONTAINER --- */
 .tv-demon {
   position: relative;
-  width: 200px;
-  margin: 120px auto;
+  animation: float 2.5s ease-in-out infinite;
 }
 
+/* --- TV HEAD --- */
 .screen {
-  width: 200px;
-  height: 140px;
-  border: 5px solid #fff;
+  width: 220px;
+  height: 150px;
   position: relative;
-  animation: shake 0.2s infinite;
+  border: 5px solid #fff;
   background: #111;
   overflow: hidden;
+  box-shadow: 0 0 20px #ff0030;
+  animation: shake 0.15s infinite;
 }
 
-.glitch, .glitch2 {
-  position: absolute;
-  width: 200px;
-  height: 140px;
-  mix-blend-mode: screen;
-  opacity: 0.8;
-}
+/* --*
 
-.glitch {
-  background: repeating-linear-gradient(
-    to bottom,
-    #0ff 0px,
-    #0ff 4px,
-    #111 4px,
-    #111 8px
-  );
-  animation: glitch-move 0.3s infinite;
-}
-
-.glitch2 {
-  background: repeating-linear-gradient(
-    to bottom,
-    #f00 0px,
-    #f00 3px,
-    #111 3px,
-    #111 7px
-  );
-  animation: glitch-move2 0.25s infinite;
-}
-
-.body {
-  width: 120px;
-  height: 200px;
-  border: 4px solid white;
-  margin: 0 auto;
-  margin-top: 10px;
-}
-
-@keyframes shake {
-  0% { transform: translate(0,0); }
-  50% { transform: translate(2px, -2px); }
-  100% { transform: translate(-1px, 1px); }
-}
-
-@keyframes glitch-move {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
-}
-
-@keyframes glitch-move2 {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(8px); }
-}
-
-</body>
-</html>
