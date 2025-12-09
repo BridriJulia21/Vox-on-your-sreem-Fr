@@ -1,99 +1,77 @@
 # Vox-on-your-sreem-Fr<!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<title>Animation Vox</title>
-<style>
-    body {
-        background: #0d0d0d;
-        color: white;
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
+body {
+  background: #080808;
+}
 
-    .vox-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        animation: fadeIn 2s ease;
-    }
+.tv-demon {
+  position: relative;
+  width: 200px;
+  margin: 120px auto;
+}
 
-    /* Cercle représentant Vox */
-    .vox-face {
-        width: 120px;
-        height: 120px;
-        background: #3a3aff;
-        border-radius: 50%;
-        box-shadow: 0 0 25px #3a3aff;
-        position: relative;
-        margin-bottom: 25px;
-    }
+.screen {
+  width: 200px;
+  height: 140px;
+  border: 5px solid #fff;
+  position: relative;
+  animation: shake 0.2s infinite;
+  background: #111;
+  overflow: hidden;
+}
 
-    /* Bouche animée */
-    .mouth {
-        position: absolute;
-        bottom: 25px;
-        left: 50%;
-        width: 40px;
-        height: 10px;
-        background: white;
-        border-radius: 10px;
-        transform: translateX(-50%);
-        animation: talk 0.3s infinite alternate;
-    }
+.glitch, .glitch2 {
+  position: absolute;
+  width: 200px;
+  height: 140px;
+  mix-blend-mode: screen;
+  opacity: 0.8;
+}
 
-    @keyframes talk {
-        0% { height: 8px; }
-        100% { height: 25px; }
-    }
+.glitch {
+  background: repeating-linear-gradient(
+    to bottom,
+    #0ff 0px,
+    #0ff 4px,
+    #111 4px,
+    #111 8px
+  );
+  animation: glitch-move 0.3s infinite;
+}
 
-    /* Bulle de texte */
-    .speech {
-        background: white;
-        color: black;
-        padding: 15px 20px;
-        border-radius: 15px;
-        font-size: 1.2em;
-        max-width: 300px;
-        text-align: center;
-        box-shadow: 0 0 20px rgba(255,255,255,0.3);
-        position: relative;
-    }
+.glitch2 {
+  background: repeating-linear-gradient(
+    to bottom,
+    #f00 0px,
+    #f00 3px,
+    #111 3px,
+    #111 7px
+  );
+  animation: glitch-move2 0.25s infinite;
+}
 
-    .speech::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        border-width: 12px;
-        border-style: solid;
-        border-color: white transparent transparent transparent;
-    }
+.body {
+  width: 120px;
+  height: 200px;
+  border: 4px solid white;
+  margin: 0 auto;
+  margin-top: 10px;
+}
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: scale(.8); }
-        to   { opacity: 1; transform: scale(1); }
-    }
+@keyframes shake {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(2px, -2px); }
+  100% { transform: translate(-1px, 1px); }
+}
 
-</style>
-</head>
-<body>
+@keyframes glitch-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
 
-<div class="vox-container">
-    <div class="vox-face">
-        <div class="mouth"></div>
-    </div>
-
-    <div class="speech">
-        Faites-nous confiance, nous veillons sur vous...
-    </div>
-</div>
+@keyframes glitch-move2 {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(8px); }
+}
 
 </body>
 </html>
